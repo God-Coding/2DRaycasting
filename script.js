@@ -1,4 +1,3 @@
-alert("I just followed this tutorial \nCoding Train : https://youtu.be/TOEi6T2mtHo \nThis is almost same code but p5 to vanilla js")
 window.onload = () =>{
     var canvas  = document.getElementById("canvas");
 var c = canvas.getContext("2d");
