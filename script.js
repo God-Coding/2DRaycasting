@@ -147,12 +147,12 @@ class Particle{
     }
 
     followMouse(){
-        window.addEventListener("mousemove", (e)=>{
+        canvas.addEventListener("mousemove", (e)=>{
             this.pos.x = e.clientX;
             this.pos.y = e.clientY;
         });
         
-        window.addEventListener("touchmove", (e)=>{
+        canvas.addEventListener("touchmove", (e)=>{
             e.preventDefault()
             this.pos.x = e.touches[0].clientX;
             this.pos.y = e.touches[0].clientY;
