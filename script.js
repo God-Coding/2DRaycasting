@@ -151,6 +151,11 @@ class Particle{
             this.pos.x = e.clientX;
             this.pos.y = e.clientY;
         });
+        
+        window.addEventListener("touchmove", (e)=>{
+            this.pos.x = e.touches[0].clientX;
+            this.pos.y = e.touches[0].clientY;
+        });
     }
 
     update(walls){
