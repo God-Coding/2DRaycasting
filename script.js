@@ -1,11 +1,13 @@
-var canvas  = document.getElementById("canvas");
+alert("I just followed this tutorial \nCoding Train : https://youtu.be/TOEi6T2mtHo \nThis is almost same code but p5 to vanilla js")
+window.onload = () =>{
+    var canvas  = document.getElementById("canvas");
 var c = canvas.getContext("2d");
 
 canvas.style.border = "2px solid black";
 document.body.style.margin = "0px";
 
-var w = canvas.width = window.innerWidth - 10;
-var h = canvas.height = window.innerHeight - 15;
+var w = canvas.width = window.innerWidth - 5;
+var h = canvas.height = window.innerHeight - 10;
 
 //some functions
 function line(x0, y0, x1, y1){
@@ -141,19 +143,18 @@ class Particle{
     constructor(){
         this.pos = new Vec2d(w / 3, h / 2);
         this.rays = [];
-        for(let i = 0; i < 360; i += 1){
-            this.rays[i] = new Ray(this.pos, new Vec2dFromAngle(i));
+        for(let i = 0; i < 360; i += 0.1){
+            this.rays.push(new Ray(this.pos, new Vec2dFromAngle(i)));
         }
     }
 
     followMouse(){
-        canvas.addEventListener("mousemove", (e)=>{
+        window.addEventListener("mousemove", (e)=>{
             this.pos.x = e.clientX;
             this.pos.y = e.clientY;
         });
         
-        canvas.addEventListener("touchmove", (e)=>{
-            e.preventDefault()
+        window.addEventListener("touchmove", (e)=>{
             this.pos.x = e.touches[0].clientX;
             this.pos.y = e.touches[0].clientY;
         });
@@ -174,7 +175,7 @@ class Particle{
                 }
             });
             if(point){
-                c.strokeStyle = "rgba(255, 255, 255, 0.3)";
+                c.strokeStyle = "rgba(255, 255, 255, 0.1)";
                 line(this.pos.x, this.pos.y, point.x, point.y)
             }
         });
@@ -231,3 +232,4 @@ function loop(){
     requestAnimationFrame(loop);
 }
 loop();
+}
