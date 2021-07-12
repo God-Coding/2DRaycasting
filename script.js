@@ -153,6 +153,7 @@ class Particle{
         });
         
         window.addEventListener("touchmove", (e)=>{
+            e.preventDefault()
             this.pos.x = e.touches[0].clientX;
             this.pos.y = e.touches[0].clientY;
         });
