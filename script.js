@@ -4,8 +4,8 @@ var c = canvas.getContext("2d");
 canvas.style.border = "2px solid black";
 document.body.style.margin = "0px";
 
-var w = canvas.width = window.innerWidth - 5;
-var h = canvas.height = window.innerHeight - 5;
+var w = canvas.width = window.innerWidth - 10;
+var h = canvas.height = window.innerHeight - 15;
 
 //some functions
 function line(x0, y0, x1, y1){
